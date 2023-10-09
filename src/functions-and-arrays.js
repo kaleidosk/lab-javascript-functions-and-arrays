@@ -1,19 +1,59 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(a,b) {
+  if (a>=b) {
+    return a
+  } 
+  else if (b>a) {
+  return b
+}
+}
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord (array) {
+  let longestWord = '0'
+  for (let i=0; i<array.length;i++) 
+  {
+  if (array[i].length=''){
+  longestWord= "null"}
+
+  else if (array[i].length >= longestWord.length) {
+    longestWord= array[i]
+  }
+  else if (array[i].length < longestWord.length){
+    longestWord = longestWord
+  }
+}
+return longestWord
+}
+
+console.log (findLongestWord (words))
 
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+function sumNumbers (arr){
+  let sum= 0
+  for (let i=0; i<arr.length; i++){
+  sum += arr[i]}
+  return sum
+  }
 
-function sumNumbers() {}
+// I was trying to return null when called an empty array (but this is not working):
+// for (let i=0; i<arr.length; i++){
+//   if (arr[i] !== 0 && typeof arr[i] === "number")
+//   sum += arr[i]
+// return sum
+// }
+// else if (arr[i].length === 0){
+//   return "null"
+//  }
+//}
+console.log (sumNumbers (numbers))
 
 
 
@@ -26,13 +66,26 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(arr) {
+  let sum=0
+  for (let i=0; i<arr.length; i++)
+  {sum += arr[i]}
+  return sum/ arr.length
+}
+console.log (averageNumbers (numbersAvg))
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(arrayStrings) { 
+  let sumallArrlength= 0
+  for (i=0; i<wordsArr.length; i++)
+  {sumallArrlength += wordsArr[i].length}
+  return sumallArrlength/ wordsArr.length
+}
+
+console.log(averageWordLength (wordsArr))
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -52,18 +105,33 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(givenarray) {
+  let wordChecked = []
+  for (let i=0; i<givenarray.length;i++){
+    if(wordChecked.indexOf(givenarray[i]) === -1){
+      wordChecked.push(givenarray[i]);
+    }}
+  return wordChecked;}
 
 
+console.log (uniquifyArray(wordsUnique));
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(wordArray, wordToBeSearch) {
+  for (i=0; i< wordArray.length; i++) {
+    if (wordArray.includes(wordToBeSearch) ){ 
+   return 'true'
+  }
+   else
+   {return 'false'} 
+}}
+console.log (doesWordExist (wordsUnique,'truth'))
 
 
 
-// Iteration #7: Count repetition
+// Iteration #7: Count repetition$
 const wordsCount = [
   'machine',
   'matter',
@@ -78,7 +146,37 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(wordsArray, wordToSearch) {
+  let count = 0
+  for (let i=0;i<wordsArray.length;i++){
+    if (wordsArray[i]===wordToSearch){
+      count ++
+    }
+  }
+return count}
+  console.log (howManyTimes(wordsCount,'matter'))
+
+
+ // let count = 0
+//for (i=0;i<wordsArray.length;i++)
+//for (j=i+1;j<wordsArray.length;j++)
+
+//if (i===j) {
+//count ++ }
+//else if (i !== j){
+//count = 1
+//}
+//return count
+//}
+//console.log (howManyTimes(wordsCount,'matter'))
+
+//if wordsArray.indexOf(wordToSearch) === -1
+//return '0'
+//else if wordsArray.indexOf(wordToSearch) > 0
+
+//return wordsArray.indexOf(wordToSearch)
+//}
+//}
 
 
 
